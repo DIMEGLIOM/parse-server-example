@@ -19,13 +19,32 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  }
+  },
+  
+  verifyUserEmails: true,
+  publicServerURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
+  
+  appName: process.env.APP_NAME || "UniMarkit",
+  
+  emailAdapter: {
+    
+    module: 'parse-server-simple-mailgun-adapter',
+      options: {
+        fromAdress: process.env.EMAIL_FROM || "signup@unimarkit.com",
+        domain: process.env.MAILGUN_DOMAIN || "unimarkit.com",
+        apiKey: process.env.MAILGUN_API_KEY || "key-f6123bdcd2cbe46986516fc8124f8fb7"
+        
+        
+      }
+  },
+  
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 
 var app = express();
+
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));

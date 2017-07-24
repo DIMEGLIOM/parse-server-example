@@ -39,7 +39,8 @@ var api = new ParseServer({
 	   	options: {
 	  		fromAddress: process.env.EMAIL_FROM || "no-reply@unimarkit.com",
 	   		domain: process.env.MAILGUN_DOMAIN || "unimarkit.com",
-	  		apiKey: process.env.MAILGUN_API_KEY  || "apikey"
+	  		apiKey: process.env.MAILGUN_API_KEY  || "apikey",
+			appName: process.env.APP_NAME || "UniMarkit"
 	 	}
 	   },
 	

@@ -25,7 +25,7 @@ var api = new ParseServer({
   
   verifyUserEmails: true,
 
-  publicServerURL: process.env.SERVER_URL || 'httpss://unimarkit.herokuapp.com/parse',
+  publicServerURL: process.env.SERVER_URL || 'https://unimarkit.herokuapp.com/parse',
   appName: process.env.APP_NAME || "UniMarkit",
 
 emailAdapter: {

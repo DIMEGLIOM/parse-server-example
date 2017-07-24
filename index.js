@@ -16,7 +16,7 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'T2G1900',
   masterKey: process.env.MASTER_KEY || 'T2G1metoread', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  serverURL: process.env.SERVER_URL || 'https://localhost:1337/parse',  // Don't forget to change to https if needed
   
  
  liveQuery: {
@@ -25,7 +25,7 @@ var api = new ParseServer({
   
   verifyUserEmails: true,
 
-  publicServerURL: process.env.SERVER_URL || 'https://localhost:1337/parse',
+  publicServerURL: process.env.SERVER_URL || 'https://unimarkit.herokuapp.com/',
   appName: process.env.APP_NAME || "UniMarkit",
 
  emailAdapter: {

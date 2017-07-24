@@ -22,22 +22,7 @@ var api = new ParseServer({
  liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
    }, 
-  
-  verifyUserEmails: true,
 
-  publicServerURL: process.env.SERVER_URL || 'https://unimarkit.herokuapp.com/parse',
-  appName: process.env.APP_NAME || "UniMarkit",
-
-emailAdapter: {
-    
-    module: 'parse-server-simple-mailgun-adapter',
-      options: {
-        fromAddress: process.env.EMAIL_FROM || "signup@unimarkit.com",
-        domain: process.env.MAILGUN_DOMAIN || "unimarkit.com",
-        apiKey: process.env.MAILGUN_API_KEY || "key-f6123bdcd2cbe46986516fc8124f8fb7"
-        
-      }
-  },
   
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server

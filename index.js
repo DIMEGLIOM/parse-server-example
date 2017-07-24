@@ -17,9 +17,11 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'T2G1900',
   masterKey: process.env.MASTER_KEY || 'T2G1metoread', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
-  liveQuery: {
-    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  },
+  
+ 
+ // liveQuery: {
+  //  classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  // },
   
   verifyUserEmails: true,
   publicServerURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
@@ -30,10 +32,9 @@ var api = new ParseServer({
     
     module: 'parse-server-simple-mailgun-adapter',
       options: {
-        fromAdress: process.env.EMAIL_FROM || "signup@unimarkit.com",
+        fromAddress: process.env.EMAIL_FROM || "signup@unimarkit.com",
         domain: process.env.MAILGUN_DOMAIN || "unimarkit.com",
         apiKey: process.env.MAILGUN_API_KEY || "key-f6123bdcd2cbe46986516fc8124f8fb7"
-        
         
       }
   },

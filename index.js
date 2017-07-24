@@ -34,13 +34,15 @@ var api = new ParseServer({
 	/* This will appear in the subject and body of the emails that are sent */
 	// appName: process.env.APP_NAME || "UniMarkit", 
 
+	appName: 'UniMarkit',
+	
 	emailAdapter: {
 		module: 'parse-server-simple-mailgun-adapter',
 	   	options: {
 	  		fromAddress: process.env.EMAIL_FROM || "no-reply@unimarkit.com",
 	   		domain: process.env.MAILGUN_DOMAIN || "unimarkit.com",
 	  		apiKey: process.env.MAILGUN_API_KEY  || "apikey",
-			appName: process.env.APP_NAME || "UniMarkit"
+			
 	 	}
 	   },
 	

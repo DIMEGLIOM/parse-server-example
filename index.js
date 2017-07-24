@@ -24,7 +24,7 @@ var api = new ParseServer({
    },
   
   verifyUserEmails: true,
-  publicServerURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
+  publicServerURL: process.env.SERVER_URL || 'https://localhost:1337/parse',
   
   appName: process.env.APP_NAME || "UniMarkit",
   

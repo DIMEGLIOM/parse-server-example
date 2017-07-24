@@ -28,17 +28,19 @@ var api = new ParseServer({
   publicServerURL: process.env.SERVER_URL || 'https://localhost:1337/parse',
   appName: process.env.APP_NAME || "UniMarkit",
 
-emailAdapter: {
-    
-    module: 'parse-server-simple-mailgun-adapter',
-      options: {
-        fromAddress: process.env.EMAIL_FROM || "signup@unimarkit.com",
-        domain: process.env.MAILGUN_DOMAIN || "unimarkit.com",
-        apiKey: process.env.MAILGUN_API_KEY || "key-f6123bdcd2cbe46986516fc8124f8fb7"
-        
-      }
-  },
-
+ emailAdapter: {
+  module: 'parse-server-mailgun-adapter',
+  options: {
+    fromAddress: 'no-reply@unimarkit.com',
+    domain: 'unimarkit.com',
+    apiKey: 'key-f6123bdcd2cbe46986516fc8124f8fb7',
+ 
+    // This is the template. You get {{url}} by default, but any params 
+    // added above is also available inside the template 
+    html: '<div><h1>Welcome to our service!</h1><b>Confirm by clicking <a href="{{url}}">here</a></div>'
+  }
+}, 
+  
   
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server

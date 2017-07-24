@@ -22,11 +22,6 @@ var api = new ParseServer({
  liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
    },
-  
-  verifyUserEmails: true,
-  publicServerURL: process.env.SERVER_URL || 'https://localhost:1337/parse',
-  
-  appName: process.env.APP_NAME || "UniMarkit",
 
   
 });

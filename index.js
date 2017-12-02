@@ -34,7 +34,7 @@ var api = new ParseServer({
 	/* This will appear in the subject and body of the emails that are sent */
 	
 	 appName: 'UniMarkit',
-	
+	/*
 	emailAdapter: {
 		module: 'parse-server-simple-mailgun-adapter',
 	   	options: {
@@ -44,7 +44,7 @@ var api = new ParseServer({
 			
 	 	}
 	   },
-	
+	*/
 	//**** File Storage ****//
 	// filesAdapter: new S3Adapter(
 	// 	{
